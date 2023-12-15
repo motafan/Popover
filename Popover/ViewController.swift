@@ -35,8 +35,15 @@ class ViewController: UIViewController {
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = 128
         label.text = "From the time a popover is presented until the time it’s dismissed, UIKit uses an instance of this class to manage the presentation behavior. You use instances of this class as-is to configure aspects of the popover appearance and behavior for view controllers whose presentation style is set to UIModalPresentationPopover."
-        label.frame.size =  label.sizeThatFits(CGSize(width: 128, height: UIView.layoutFittingCompressedSize.height))
+    
         
+        //  Decimal precision affects the rounded corner calculation
+        var size = label.sizeThatFits(CGSize(width: 128, height: UIView.layoutFittingCompressedSize.height))
+        print("before",size)
+        size.height = size.height.rounded(.up)
+        size.height = size.height.rounded(.up) + 1
+        print("after",size)
+        label.frame.size =  size
         var design = PopoverDesign()
         design.backGroundColor = .systemFill
         design.cornerRadius = 13
@@ -64,7 +71,7 @@ class ViewController: UIViewController {
         let popoverController = PopoverController(
             contentView: label,
             design: design,
-            arrow: PopoverArrow(height: 13, base: 26, baseCornerRadius: 4, direction: .any),
+            arrow: PopoverArrow(height: 13, base: 26, baseCornerRadius: 0, direction: .any),
             sourceView: sender as? UIView,
             barButtonItem: sender as? UIBarButtonItem)
         

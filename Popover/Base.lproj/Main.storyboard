@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,10 +41,13 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hXL-eg-a2o">
-                            <rect key="frame" x="159" y="5" width="75" height="34.333333333333336"/>
+                            <rect key="frame" x="145.33333333333334" y="5" width="102.66666666666666" height="34.333333333333336"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Button" imagePadding="8">
+                                <imageReference key="image" image="circle.inset.filled" catalog="system" symbolScale="medium" renderingMode="original"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="topCenterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgF-cc-Us9"/>
                             </connections>
@@ -87,6 +91,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle.inset.filled" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
